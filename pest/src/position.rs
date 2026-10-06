@@ -326,10 +326,10 @@ impl<'i> Position<'i> {
                         }
                     }
                 }
-                [s1, s2, s3] if !s1.is_empty() && !s2.is_empty() && s3.is_empty() => {
+                [s1, s2, s3] if !s1.is_empty() && !s2.is_empty() && !s3.is_empty() => {
                     let b1 = s1.as_bytes()[0];
                     let b2 = s2.as_bytes()[0];
-                    let b3 = s2.as_bytes()[0];
+                    let b3 = s3.as_bytes()[0];
                     let miter =
                         memchr::memchr3_iter(b1, b2, b3, &self.input.as_bytes()[self.pos..]);
                     for from in miter {
